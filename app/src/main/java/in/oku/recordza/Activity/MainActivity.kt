@@ -9,6 +9,10 @@ import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import android.widget.TextView
 import kotlinx.android.synthetic.main.activity_main.*
+import android.support.v7.widget.PagerSnapHelper
+import android.support.v7.widget.SnapHelper
+
+
 
 
 class MainActivity : AppCompatActivity(), Animation.AnimationListener {
@@ -28,6 +32,8 @@ class MainActivity : AppCompatActivity(), Animation.AnimationListener {
         mRecyclerView.adapter = mAdaptor
         mAdaptor.notifyDataSetChanged()
 
+        val snapHelper = PagerSnapHelper()
+        snapHelper.attachToRecyclerView(mRecyclerView)
 
 //        mAnimation = AnimationUtils.loadAnimation(this, R.anim.zoom_out)
 //        mAnimation?.setAnimationListener(this)
